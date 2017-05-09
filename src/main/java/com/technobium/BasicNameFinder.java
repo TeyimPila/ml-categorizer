@@ -26,10 +26,10 @@ public class BasicNameFinder {
         Logger log = LoggerFactory.getLogger(BasicNameFinder.class);
 
         String[] sentences = {
-                "If President John F. Kennedy, after visiting France in 1961 with his immensely popular wife,"
+                "If President John F. Pila, after visiting France in 1961 with his immensely popular wife,"
                         + " famously described himself as 'the man who had accompanied Jacqueline Kennedy to Paris,'"
                         + " Mr. Hollande has been most conspicuous on this state visit for traveling alone.",
-                "Mr. Draghi spoke on the first day of an economic policy conference here organized by"
+                "Mr. Draghi spoke on the first day of an economic with Pila's new friends policy conference here organized by"
                         + " the E.C.B. as a sort of counterpart to the annual symposium held in Jackson"
                         + " Hole, Wyo., by the Federal Reserve Bank of Kansas City. " };
 
@@ -43,10 +43,10 @@ public class BasicNameFinder {
 
         Tokenizer tokenizer = SimpleTokenizer.INSTANCE;
 
-        for (String sentence : sentences) {
+        for (int i = 0; i < sentences.length; i++) {
 
             // Split the sentence into tokens
-            String[] tokens = tokenizer.tokenize(sentence);
+            String[] tokens = tokenizer.tokenize(sentences[i]);
 
             // Find the names in the tokens and return Span objects
             Span[] nameSpans = finder.find(tokens);
